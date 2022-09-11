@@ -14,16 +14,11 @@ class Login extends React.Component {
       validatedPassword: false,
       disableBtn: true,
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.credentialValidation = this.credentialValidation.bind(this);
-    this.sendBtnClick = this.sendBtnClick.bind(this);
-    this.enableLoginBtn = this.enableLoginBtn.bind(this);
   }
 
   credentialValidation(target) {
     const email = new RegExp(/^[\w.]+@[a-z]+.\w{2,3}$/g);
-    const password = new RegExp(/[\w\D]{6}/g);
+    const password = new RegExp(/[\w]{6}/g);
     if (target.name === 'email') {
       this.setState({ validatedEmail: email.test(target.value) });
     }
